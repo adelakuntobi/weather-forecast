@@ -322,4 +322,10 @@ nav div input {
   .search{
     width: auto;
   }
+  .other{
+    flex-wrap: wrap;
+  }
+  .fresh .content{
+    flex-direction: column;
+  }
 }
