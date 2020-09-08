@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <title>GADS Weather App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body onload="getLocation()">
+  <div class="loader-div" id="loader">
+    <div class="loading">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+  <header>
+    <nav>
+      <div>
+        <h2><span>W</span>Tee</h2>
+        <ul>
+          <li class="active">Home</li>
+          <li>Previous Searches</li>
+        </ul>
+      </div>
+      <div>
+        <form id="form-group" class="search" onsubmit="event.preventDefault()">
+          <input id="inputTag" type="search" placeholder="Search..." />
+          <i class="fas fa-search"></i>
+          <button id="search-btn" type="submit" value="submit" onclick="getData()">Search</button>
+        </form>
+        <button>Sign up</button>
+      </div>
+    </nav>
+  </header>
+  <p id="demo"></p>
+  <main class="fresh">
+    <div class="content" id="current">
+      <div class="">
+        <h2>Lagos, Nigeria</h2>
+        <h4 class="margin">Thursday, 17th April</h4>
+        <p>Description</p>
+        <div style="display: flex; align-items: center;">
+          <img class="today-img" src="http://openweathermap.org/img/wn/10d@2x.png" />
+          <h1>26<sup>o</sup>C</h1>
+        </div>
+      </div>
+      <div>
+        <h3>Description</h3>
+        <p>Humidity</p>
+        <p>Wind</p>
+      </div>
+      <!-- <img src="./assets/images/rain.svg" alt="weather condition" /> -->
+
+      <!-- <div class="display">
+        <div class="display">
+          <h2>Lagos, Nigeria</h2>
+          <p>Thursday, 17th April</p>
+        </div>
+        <div></div>
+        <h1>26<sup>o</sup>C</h1>
+        <h3>Description</h3>
+        <p>Humidity</p>
+        <p>Wind</p>
+      </div> -->
+    </div>
+  </main>
+  <div class="other" id="otherdays">
+
+  </div>
+
+
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
