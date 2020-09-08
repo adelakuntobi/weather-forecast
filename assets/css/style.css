@@ -328,4 +328,7 @@ nav div input {
   .fresh .content{
     flex-direction: column;
   }
+  .details{
+    width: 50%;
+  }
 }
