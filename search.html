@@ -11,14 +11,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon.ico" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#4f4b92" />
-  <link rel="apple-touch-icon" sizes="72x72" href="./assets/images/favicon/apple-icon-72x72.png">
+  <link rel="manifest" rel="manifest.json" />
 </head>
 
-<body>
+<body onload="getData()">  <div class="loader-div" id="loader">
+  <div class="loading">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</div>
   <header>
     <nav>
       <div>
@@ -29,8 +33,8 @@
         </ul>
       </div>
       <div>
-        <form id="form-group" class="search" action="./search.html">
-          <input id="inputTag" type="search" placeholder="Search..." />
+        <form meth id="form-group" class="search" action="./search.html" >
+          <input id="inputTag" type="search" placeholder="Search..."  />
           <i class="fas fa-search"></i>
           <button id="search-btn" type="submit" value="submit" onclick="getData()">Search</button>
         </form>
@@ -38,15 +42,13 @@
       </div>
     </nav>
   </header>
-  <p id="demo"></p>
-  <main class="landing-main">
-    <img src="./assets/images/1.svg" />
-    <div class="header-text">
-      <p>Discover</p>
-      <h1>Weather<br> Forecast</h1>
-      <a href="./location.html"><button onclick="getLocation()">Check With Location</button></a>
+
+  <div class="fresh">
+    <div class="content" id="current">
+      <div class="">
+
     </div>
-  </main>
+  </div>
 
   <script src="./assets/js/main.js"></script>
   <script src="./current.js"></script>

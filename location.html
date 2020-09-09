@@ -12,6 +12,7 @@
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="manifest" rel="manifest.json" />
 </head>
 
 <body onload="getLocation()">
@@ -33,7 +34,7 @@
         </ul>
       </div>
       <div>
-        <form id="form-group" class="search" onsubmit="event.preventDefault()">
+        <form id="form-group" class="search" action="./search.html">
           <input id="inputTag" type="search" placeholder="Search..." />
           <i class="fas fa-search"></i>
           <button id="search-btn" type="submit" value="submit" onclick="getData()">Search</button>
@@ -42,7 +43,6 @@
       </div>
     </nav>
   </header>
-  <p id="demo"></p>
   <main class="fresh">
     <div class="content" id="current">
       <div class="">

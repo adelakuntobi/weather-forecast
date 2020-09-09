@@ -8,7 +8,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   color: #3a5a64;
-  background-color: #fefefe;
+  background-color: #fbfbfb;
 
 }
 .header-text{
@@ -305,7 +305,12 @@ nav div input {
     visibility: visible;
   }
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
 @media (max-width: 850px) {
   .display{
     display: block;

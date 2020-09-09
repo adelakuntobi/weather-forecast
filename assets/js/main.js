@@ -119,17 +119,9 @@ function showPosition(position) {
     })
 }
 
-function loopTrue(num){
-  for (let i = 0; i < 8; i++) {
-    return num = num + 1
-  }
-}
-numberj =loopTrue()
-// const getData = () => {
-//   // e.preventDefault()
-// }
 
-function getData() {
-  console.log(input.value)
-  fetch()
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register('/serviceworker.js')
+  .then((reg) => console.log('Service dey registered',reg))
+  .catch((err) => console.log('E no dey work oga',err))
 }
