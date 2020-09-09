@@ -120,12 +120,17 @@ function showPosition(position) {
 }
 
 function getData() {
+  if(input.value == ""){
+    document.getElementById("modal").style.display = "block"
+    // document.getElementById("text").textContent = "Empty input, add something!"
+  }
   document.getElementById("loader").style.display = "block"
 
   console.log(input.value);
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=69af108fec23899a47ce594059cf3b50`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=69af108fec23899a47ce594059cf3b50`)
   .then(res => res.json())
   .then(data => {
+    input.value = ""
     // temp = data.current.temp -273.15
     console.log(data)
     setTimeout(() => {
