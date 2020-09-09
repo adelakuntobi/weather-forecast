@@ -19,34 +19,49 @@
 </head>
 
 <body>
+  <div class="loader-div" id="loader" style="display: none;">
+    <div class="loading">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
   <header>
     <nav>
       <div>
-        <h2><span>W</span>Tee</h2>
+        <h2 class="logo">W<span id="tee">Tee</span></h2>
         <ul>
           <li class="active">Home</li>
           <li>Previous Searches</li>
         </ul>
       </div>
       <div>
-        <form id="form-group" class="search" action="./search.html">
+        <form id="form-group" class="search" onsubmit="event.preventDefault()">
           <input id="inputTag" type="search" placeholder="Search..." />
-          <i class="fas fa-search"></i>
+          <!-- <i class="fas fa-search"></i> -->
           <button id="search-btn" type="submit" value="submit" onclick="getData()">Search</button>
         </form>
-        <button>Sign up</button>
+        <!-- <button>Sign up</button> -->
       </div>
     </nav>
   </header>
-  <p id="demo"></p>
-  <main class="landing-main">
+  <main class="landing-main" id="content2">
     <img src="./assets/images/1.svg" />
     <div class="header-text">
       <p>Discover</p>
-      <h1>Weather<br> Forecast</h1>
+      <h1 class="weather">Weather<br> Forecast</h1>
       <a href="./location.html"><button onclick="getLocation()">Check With Location</button></a>
     </div>
   </main>
+  <div class="modal-bg" id="modal">
+    <div>
+      <span id="closeBtn">X</span>
+      <h3>How far, that wasn't a correct location.<br>
+        Check and try again biko
+      </h3>
+    </div>
+  </div>
 
   <script src="./assets/js/main.js"></script>
   <script src="./current.js"></script>

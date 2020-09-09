@@ -9,18 +9,28 @@ body {
   font-family: 'Raleway', sans-serif;
   color: #3a5a64;
   background-color: #fbfbfb;
-
 }
-.header-text{
+
+.header-text {
   margin: auto;
 }
-.header-text p{
+
+.header-text p {
   font-weight: 600;
   font-size: 1.5rem;
   margin: 1.5rem 0;
 }
-.header-text a button{
+
+.header-text a button {
   margin: 1.5rem 0;
+}
+
+#tee {
+  color: #4f4b92;
+}
+
+.logo {
+  font-size: 2rem;
 }
 
 nav,
@@ -35,7 +45,8 @@ nav h2 {
   font-family: 'Pacifico', cursive;
 }
 
-nav div,form {
+nav div,
+form {
   display: flex;
   align-items: center;
 }
@@ -94,29 +105,33 @@ nav div input {
   outline: none;
   width: 95%;
   border: none;
-  background-color: transparent  ;
-
+  background-color: transparent;
+  padding: 10px 15px;
+  border-radius: 20px;
 }
 
 .search {
   border: 1px solid #80808054;
-  padding: 10px 15px;
+  /* padding: .5px 0; */
   margin: 10px;
   border-radius: 20px;
   width: 300px;
 }
-.search:focus{
+
+.search:focus {
   border: 1px solid gray;
 }
-.search i{
+
+.search i {
   margin: 0 5px;
 }
-.fresh{
+
+.fresh {
   width: 80%;
   margin: auto;
 }
 
-.fresh .content{
+.fresh .content {
   display: flex;
   margin: 2rem 0;
   /* flex-flow: row-reverse; */
@@ -124,51 +139,129 @@ nav div input {
   justify-content: space-around;
   align-items: center;
 }
-.content h2{
+
+.content h2 {
   margin: 1rem 0;
 }
-.today-img{
+
+.today-img {
   width: 90px;
 }
-.display{
+
+.display {
   display: none;
 }
-.display-yes{
+
+.display-yes {
   display: block;
 }
-.other{
+
+.other {
   display: flex;
   justify-content: space-between;
   margin: 30px;
   text-align: center;
 }
-#search-btn{
-  position: absolute;
-  top: -999px;
-  left: -999px;
-  width: 0px;
-  height: 0px;
+
+#search-btn {
+  border-radius: 20px;
 }
-.margin{
+
+.margin {
   margin: .75rem 0;
 }
-.description::first-letter{
+
+.description::first-letter {
   text-transform: uppercase;
 }
-.details p{
+
+.details p,
+.details1 p {
   margin: .75rem 0;
   font-size: 1.25rem;
 }
-.first-details{
+
+.details1 p {
+  letter-spacing: 2px;
+  font-size: 1.75rem;
+}
+
+.first-details {
   font-size: x-large;
 }
+
+.gotten-back {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gotten-back .details1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gotten-back .details1 p {
+  width: 50%;
+}
+
+.gotten-back .logo-gotten {
+  width: 43%;
+  margin: 0 20px;
+}
+
+.gotten-back .today-img {
+  width: initial;
+}
+
+.modal-bg {
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* opacity: 0; */
+}
+
+.modal-bg div {
+  background-color: white;
+  padding: 50px 30px;
+  margin: 30px;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+#closeBtn {
+  text-align: right;
+  display: block;
+  position: absolute;
+  top: -21px;
+  font-size: xx-large;
+  right: 20px;
+  background: red;
+  padding: 10px 18px;
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
 /* .first-details h2{
   font-size: 2.5rem;
 }
 .first-details h4{
   font-size: 1.5rem;
 } */
+
+
 /* Loader */
+
 .loader-div {
   /* background: #2980b9; */
   background: #4f4b92;
@@ -180,8 +273,8 @@ nav div input {
   bottom: 0;
   position: fixed;
   width: 100%;
-
 }
+
 .loading {
   position: absolute;
   top: 50%;
@@ -193,6 +286,7 @@ nav div input {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
 }
+
 .loading .circle {
   position: relative;
   background: white;
@@ -206,6 +300,7 @@ nav div input {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
 }
+
 .loading .circle:before {
   content: "";
   position: absolute;
@@ -218,26 +313,31 @@ nav div input {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
 }
+
 .loading .circle:nth-child(1)::before {
   left: 0;
   bottom: 0;
   border-bottom-left-radius: 40px;
 }
+
 .loading .circle:nth-child(2)::before {
   right: 0;
   bottom: 0;
   border-bottom-right-radius: 40px;
 }
+
 .loading .circle:nth-child(3)::before {
   top: 0;
   left: 0;
   border-top-left-radius: 40px;
 }
+
 .loading .circle:nth-child(4)::before {
   top: 0;
   right: 0;
   border-top-right-radius: 40px;
 }
+
 .loading:before {
   content: "";
   position: absolute;
@@ -254,6 +354,7 @@ nav div input {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
 }
+
 @keyframes beesandbombs {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -265,6 +366,7 @@ nav div input {
     transform: translate(-50%, -50%) rotate(0deg);
   }
 }
+
 @keyframes beesandbombsrev {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -280,6 +382,7 @@ nav div input {
     visibility: hidden;
   }
 }
+
 @keyframes beesandbombscircle {
   0% {
     transform: rotate(0deg);
@@ -291,6 +394,7 @@ nav div input {
     transform: rotate(-360deg);
   }
 }
+
 @keyframes beesandbombscirclebox {
   0% {
     visibility: hidden;
@@ -305,35 +409,47 @@ nav div input {
     visibility: visible;
   }
 }
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+
 @media (max-width: 850px) {
-  .display{
+  .display {
     display: block;
   }
-  .display-yes,nav ul,nav button{
+  .display-yes,
+  nav ul {
     display: none;
   }
-  .landing-main{
+  .landing-main,.gotten-back {
     flex-direction: column;
   }
-  .landing-main img{
+  .landing-main img,.gotten-back .logo-gotten {
     width: 85%;
   }
-  .search{
+  .search {
     width: auto;
   }
-  .other{
+  .other {
     flex-wrap: wrap;
   }
-  .fresh .content{
+  .fresh .content {
     flex-direction: column;
   }
-  .details{
+  .details {
     width: 50%;
+  }
+  .weather {
+    padding: 0;
+  }
+  .gotten-back .details1 p{
+    font-size: initial;
+  }
+  .gotten-back h1{
+    font-size: 3.5rem;
   }
 }

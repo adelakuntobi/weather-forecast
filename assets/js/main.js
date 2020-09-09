@@ -91,7 +91,7 @@ function showPosition(position) {
           <h1>${data.current.temp}<sup>o</sup>C</h1>
         </div>
       </div>
-      <div class="details">
+      <div class="details1">
         <p>Feels Like <b>${data.current.feels_like}<sup>o</sup>C</b></p>
         <p>Wind Speed: <b>${data.current.wind_speed}mps</b></p>
         <p>Humidity: <b>${data.current.humidity}%</b></p>
@@ -119,6 +119,55 @@ function showPosition(position) {
     })
 }
 
+function getData() {
+  document.getElementById("loader").style.display = "block"
+
+  console.log(input.value);
+  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=69af108fec23899a47ce594059cf3b50`)
+  .then(res => res.json())
+  .then(data => {
+    // temp = data.current.temp -273.15
+    console.log(data)
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none"
+    }, 1500);
+    
+    display = `
+    <div class="gotten-back">
+
+    <img class="logo-gotten" src="./assets/images/loaded.svg" />
+    <div class="">
+      <div class="first-details">
+        <h1>${data.name}</h1>
+        <h4 class="margin">${today}</h4>
+        <p class="description">${data.weather[0].description}</p>
+        <div style="display: flex; align-items: center;" >
+          <img class="today-img" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
+          <h1>${data.main.temp}<sup>o</sup>C</h1>
+        </div>
+      </div>
+      <div class="details1">
+        <p>Feels Like <b>${data.main.feels_like}<sup>o</sup>C</b></p>
+        <p>Wind Speed: <b>${data.wind.speed}mps</b></p>
+        <p>Humidity: <b>${data.main.humidity}%</b></p>
+        <p>Pressure: <b>${data.main.pressure}mb</b></p>
+      </div>
+      </div>
+      </div>
+      `
+      document.getElementById("content2").innerHTML = display
+
+  })
+  .catch (err => {
+    console.log(err)
+    if (err.message = "city not found") {
+      document.getElementById("modal").style.display = "flex";
+    }
+  })
+}
+document.getElementById("closeBtn").addEventListener("click", () =>{
+  document.getElementById("modal").style.display = "none"
+})
 
 if("serviceWorker" in navigator){
   navigator.serviceWorker.register('/serviceworker.js')
